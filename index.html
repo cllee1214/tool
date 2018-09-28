@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Hello World!</title>
+    </head>
+    <body>
+      <button id='sass-watch' type="button">开启sass监听</button>
+    </body>
+    <script>
+      const {ipcRenderer} = require('electron')
+      const sassWatchBtn = document.getElementById('sass-watch')
+
+      sassWatchBtn.addEventListener('click', function(){
+        ipcRenderer.send('sass-watch')
+      })
+    </script>
+  </html>
